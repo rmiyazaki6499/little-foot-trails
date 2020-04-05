@@ -116,7 +116,10 @@ export const Results = () => {
 - Users are authenticated using JWT Tokens 
 - Authenticated users are able to leave a Review on a Trail 
 - Detailed Trail data persists throughout browser sessions using localStorage
-- Each Trail has a interactive Map provided by Google Maps API 
+- Each Trail has a interactive Map provided by Google Maps API
+
+Development
+- Implementation of Swagger API for clean API documentation
 
 Considerations for improvement: 
 
