@@ -7,7 +7,8 @@ Welcome to Little Foot Trails an app to help parents and caregivers get outside 
 - [Motivations](#motivations)
 - [Screenshots](#screenshots)
 - [Technologies](#technologies)
-- [Setup](#setup)
+- [Running the development server](#running-the-development-server)
+- [Setup Manually](#setup-manually)
 - [Features](#features)
 - [Contact](#contact)
 
@@ -53,8 +54,74 @@ As a group with two mothers who enjoy being active with their families we wanted
 ### Models 
 ![Models](https://github.com/rmiyazaki6499/little-foot-trails/blob/master/src/images/models.png "Models")
 
+## Running the development server
 
-## Setup
+For those that are interested in running the development server, we have containerized the project with Docker for convenience.
+
+### Install Docker
+
+To make this as easy as possible, we will be using *Docker Compose* to creat our container.
+
+- If you do not have Docker yet, start by downloading it if you are on a Mac or Windows:
+https://www.docker.com/products/docker-desktop
+
+- Or if you are on a Linux Distribution follow the directions here:
+https://docs.docker.com/compose/install/
+
+- To confirm you have Docker Compose, open up your terminal and run the command below:
+
+```
+$ docker-compose --version
+docker-compose version 1.26.2, build eefe0d31
+```
+
+### Build and Run the Container
+
+- Clone the repo to your local machine:
+
+```
+$ git clone https://github.com/rmiyazaki6499/little-foot-trails.git
+```
+
+- Go into the project directory to build and run the container with:
+
+```
+$ cd little-foot-trails/
+$ docker-compose up -d --build
+```
+
+Navigate to http://localhost:8000 to view the site on the local server.
+
+
+- You can access your container with the command:
+
+```
+$ docker exec -it little-foot-trails_little-foot-trails_1 bash
+```
+
+This will take you into the bash session within the container.
+
+### Cleaning up the Container and Image
+
+To stop the container from running, use `<Ctrl-C>` twice.
+To close down the container use the command:
+
+```
+$ docker-compose down
+```
+Then to clean up the container and image which we are no longer using use the command:
+
+```
+$ docker system prune -fa
+```
+
+Confirm that the container and image is no longer there with:
+
+```
+$ docker system df -v
+```
+
+## Setup Manually
 
 Running the Django Server
 ```
